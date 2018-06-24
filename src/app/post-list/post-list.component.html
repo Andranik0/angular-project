@@ -1,0 +1,13 @@
+<h3>Les posts</h3>
+<ul class="list-group">
+  <app-post-list-item *ngFor="let postItem of posts;"
+                [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postItem.loveIts > 0,
+                'list-group-item-danger': postItem.loveIts < 0}"
+                [id]="postItem.id"
+                [title]="postItem.title"
+                [loveIts]="postItem.loveIts"
+                [content]="postItem.content"
+                [created_at]="postItem.created_at">
+  </app-post-list-item>
+</ul>
